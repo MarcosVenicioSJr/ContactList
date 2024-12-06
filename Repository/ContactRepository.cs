@@ -20,9 +20,10 @@ namespace ContactList.Repository
             await _context.SaveChangesAsync();
         }
 
-        public Task Delete(int id)
+        public async Task Delete(Contact contact)
         {
-            throw new NotImplementedException();
+            _context.Contacts.Remove(contact);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<List<Contact>> GetAll()

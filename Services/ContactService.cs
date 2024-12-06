@@ -22,7 +22,10 @@ namespace ContactList.Services
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            Contact contact = Get(id);
+            
+            if (contact != null)
+                _contactRepository.Delete(contact);
         }
 
         public Contact Get(int id)

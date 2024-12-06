@@ -7,7 +7,7 @@ namespace ContactList.Interfaces
         Task<List<Contact>> GetAll();
         Task<Contact> GetById(int id);
         Task Update(Contact contact);
-        Task Delete(int id);
+        Task Delete(Contact contact);
         Task Create(Contact contact);
     }
 }

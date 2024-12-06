@@ -36,5 +36,12 @@ namespace ContactList.Controllers
             _contactService.Create(contact);
             return Created();
         }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            _contactService.Delete(id);
+            return Ok();
+        }
     }
 }
