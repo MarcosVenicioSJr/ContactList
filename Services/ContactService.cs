@@ -40,7 +40,7 @@ namespace ContactList.Services
 
         public void Update(Contact contact)
         {
-            throw new NotImplementedException();
+            _contactRepository.Update(contact);
         }
     }
 }

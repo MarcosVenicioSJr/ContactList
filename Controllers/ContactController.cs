@@ -43,5 +43,12 @@ namespace ContactList.Controllers
             _contactService.Delete(id);
             return Ok();
         }
+
+        [HttpPut]
+        public IActionResult Put(Contact contact)
+        {
+            _contactService.Update(contact);
+            return Ok();
+        }
     }
 }

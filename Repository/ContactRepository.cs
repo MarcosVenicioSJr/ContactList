@@ -36,9 +36,15 @@ namespace ContactList.Repository
             return await _context.Contacts.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task Update(Contact contact)
+        public async Task Update(Contact contact)
         {
-            throw new NotImplementedException();
+             _context.Contacts
+                .Where(entity => entity.Id == contact.Id)
+                .ExecuteUpdate(setter => setter
+                    .SetProperty(c => c.Mail, contact.Mail)
+                    .SetProperty(c => c.Name, contact.Name));
+
+            await _context.SaveChangesAsync();
         }
     }
 }
