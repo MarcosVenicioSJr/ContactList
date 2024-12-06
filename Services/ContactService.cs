@@ -5,6 +5,13 @@ namespace ContactList.Services
 {
     public class ContactService : IContactService
     {
+        private readonly IContactRepository _contactRepository;
+
+        public ContactService(IContactRepository contactRepository)
+        {
+            _contactRepository = contactRepository;
+        }
+
         public Task Delete(int id)
         {
             throw new NotImplementedException();
@@ -17,7 +24,7 @@ namespace ContactList.Services
 
         public List<Contact> GetAll()
         {
-            throw new NotImplementedException();
+            return _contactRepository.GetAll().Result;
         }
 
         public Task Update(Contact contact)
