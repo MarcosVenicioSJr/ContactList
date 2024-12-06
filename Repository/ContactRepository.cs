@@ -24,9 +24,9 @@ namespace ContactList.Repository
             return await _context.Contacts.ToListAsync();
         }
 
-        public Contact GetById(int id)
+        public async Task<Contact> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Contacts.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public Task Update(Contact contact)

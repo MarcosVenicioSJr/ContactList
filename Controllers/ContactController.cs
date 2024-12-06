@@ -22,5 +22,12 @@ namespace ContactList.Controllers
             List<Contact> contacts = _contactService.GetAll();
             return Ok(contacts);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            Contact contact = _contactService.Get(id);
+            return Ok(contact);
+        }
     }
 }

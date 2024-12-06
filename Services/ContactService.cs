@@ -19,7 +19,7 @@ namespace ContactList.Services
 
         public Contact Get(int id)
         {
-            throw new NotImplementedException();
+            return _contactRepository.GetById(id).Result;
         }
 
         public List<Contact> GetAll()
