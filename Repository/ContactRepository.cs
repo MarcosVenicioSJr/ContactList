@@ -14,6 +14,12 @@ namespace ContactList.Repository
             _context = context;
         }
 
+        public async Task Create(Contact contact)
+        {
+            await _context.Contacts.AddAsync(contact);
+            await _context.SaveChangesAsync();
+        }
+
         public Task Delete(int id)
         {
             throw new NotImplementedException();

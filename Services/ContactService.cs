@@ -12,7 +12,15 @@ namespace ContactList.Services
             _contactRepository = contactRepository;
         }
 
-        public Task Delete(int id)
+        public void Create(Contact contact)
+        {
+            if (contact.Id != null)
+                contact.Id = null;
+
+            _contactRepository.Create(contact);
+        }
+
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -27,7 +35,7 @@ namespace ContactList.Services
             return _contactRepository.GetAll().Result;
         }
 
-        public Task Update(Contact contact)
+        public void Update(Contact contact)
         {
             throw new NotImplementedException();
         }

@@ -29,5 +29,12 @@ namespace ContactList.Controllers
             Contact contact = _contactService.Get(id);
             return Ok(contact);
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] Contact contact)
+        {
+            _contactService.Create(contact);
+            return Created();
+        }
     }
 }

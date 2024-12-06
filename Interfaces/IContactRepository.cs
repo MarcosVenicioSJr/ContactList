@@ -8,5 +8,6 @@ namespace ContactList.Interfaces
         Task<Contact> GetById(int id);
         Task Update(Contact contact);
         Task Delete(int id);
+        Task Create(Contact contact);
     }
 }
