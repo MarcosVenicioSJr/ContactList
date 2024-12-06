@@ -35,7 +35,9 @@ Escolha uma das opções abaixo para iniciar o serviço:
 Certifique-se de ter o Docker instalado e execute:
 
 ```bash
-docker run
+docker build -t contactlist-app .
+
+docker run -d -p 5000:5000 --name contactlist-container contactlist-app
 ```
 
 #### 3.2 Iniciando com HTTP
